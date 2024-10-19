@@ -13,8 +13,8 @@ public class Rent {
 
 
         for (Car car: gallery.getCars()){
-            if (car.getCarId()== rentID && car.getIsRent()){
-                car.setRent(false);
+            if (car.getCarId()== rentID && !car.getIsRent()){
+                car.setRent(true);
                 System.out.println("Rent successfully " +
                         "Your car is: "+car.getBrand() + " "
                         + car.getModel() + " "

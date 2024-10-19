@@ -8,6 +8,7 @@ public class Menu {
         Display display = new Display(gallery);
         Rent rent1 = new Rent();
         Buy buy1 = new Buy();
+        Return returnCar = new Return();
 
         System.out.println("**** Welcome to YILDIZ Gallery ****");
         star();
@@ -58,15 +59,16 @@ public class Menu {
                     break;
                 case 6:
                     System.out.println("Return...");
-                    // Return logic goes here
+                    returnCar.returnCar();
                     break;
                 case 7:
                     System.out.println("Add a Car...");
-                    // Add a car logic goes here
+                    AddCar addCar = new AddCar(gallery);
+                    addCar.add();
                     break;
+
                 case 8:
                     System.out.println("Delete a Car...");
-                    // Delete a car logic goes here
                     break;
                 case 9:
                     System.out.println("Exit...");
