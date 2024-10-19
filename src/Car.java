@@ -9,11 +9,15 @@ public class Car {
     private int engineCapacity;
     private int year;
     private int door;
+    private int rentalFee;
+    private int purchaseFee;
     private String color;
+    private int carId;
     private boolean accident;
+    private boolean isRent;
 
     public Car(String brand, String model, String segment, String engineType, String gear, int fuelConsumption,
-               int maximumSeats, int engineCapacity, int year, int door, String color, boolean accident) {
+               int maximumSeats, int engineCapacity, int year, int door, int rentalFee, int purchaseFee, String color, int carId, boolean accident, boolean isRent) {
         this.brand = brand;
         this.model = model;
         this.segment = segment;
@@ -24,8 +28,12 @@ public class Car {
         this.engineCapacity = engineCapacity;
         this.year = year;
         this.door = door;
+        this.rentalFee = rentalFee;
+        this.purchaseFee = purchaseFee;
         this.color = color;
+        this.carId = carId;
         this.accident = accident;
+        this.isRent = isRent;
     }
 
     public String getBrand() {
@@ -105,6 +113,21 @@ public class Car {
         this.door = door;
     }
 
+    public int getRentalFee() {
+        return rentalFee;
+    }
+
+    public void setRentalFee(int rentalFee) {
+        this.rentalFee = rentalFee;
+    }
+
+    public int getPurchaseFee() {
+        return purchaseFee;
+    }
+    public void setPurchaseFee(int purchaseFee) {
+        this.purchaseFee = purchaseFee;
+    }
+
     public String getColor() {
         return color;
     }
@@ -113,7 +136,16 @@ public class Car {
         this.color = color;
     }
 
-    public boolean isAccident() {
+    public int getCarId() {
+        return carId;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
+    }
+
+
+    public boolean getIsAccident() {
         return accident;
     }
 
@@ -121,7 +153,11 @@ public class Car {
         this.accident = accident;
     }
 
+    public boolean getIsRent() {
+        return isRent;
+    }
 
-
-
+    public void setRent(boolean rent) {
+        isRent = rent;
+    }
 }
