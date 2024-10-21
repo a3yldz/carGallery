@@ -28,7 +28,7 @@ public class Display {
 
     public void displayAvailableCars() {
         for (Car car : gallery.getCars()) {
-            if (car.getIsRent()) {
+            if (!car.getIsRent()) {
                 displayCarInfo(car);
             }
         }
@@ -42,7 +42,7 @@ public class Display {
 
     public void displayUnavailableCars() {
         for (Car car : gallery.getCars()) {
-            if (!car.getIsRent()) {
+            if (car.getIsRent()) {
                 displayCarInfo(car);
             }
         }

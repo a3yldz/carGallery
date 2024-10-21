@@ -8,6 +8,7 @@ public class Menu {
         Display display = new Display(gallery);
         Rent rent1 = new Rent();
         Buy buy1 = new Buy();
+        Return returnCar = new Return();
 
         System.out.println("**** Welcome to YILDIZ Gallery ****");
         star();
@@ -49,24 +50,42 @@ public class Menu {
                     System.out.println("Rent a Car...");
                     star();
                     display.displayAvailableCars();
-                    rent1.rent();
+                    System.out.println("Choose rental type (1: Daily, 2: Monthly, 3: Annual): ");
+                    int rentalType = scanner.nextInt();
 
+                    switch (rentalType) {
+                        case 1:
+                            rent1.setRentStrategy(new RentDaily());
+                            break;
+                        case 2:
+                            rent1.setRentStrategy(new RentMonthly());
+                            break;
+                        case 3:
+                            rent1.setRentStrategy(new RentAnnual());
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Defaulting to daily rent.");
+                            rent1.setRentStrategy(new RentDaily());
+                    }
+                    rent1.rent();
                     break;
+
                 case 5:
                     System.out.println("Buy a Car...");
                     buy1.buy();
                     break;
                 case 6:
                     System.out.println("Return...");
-                    // Return logic goes here
+                    returnCar.returnCar();
                     break;
                 case 7:
                     System.out.println("Add a Car...");
-                    // Add a car logic goes here
+                    AddCar addCar = new AddCar(gallery);
+                    addCar.add();
                     break;
+
                 case 8:
                     System.out.println("Delete a Car...");
-                    // Delete a car logic goes here
                     break;
                 case 9:
                     System.out.println("Exit...");
