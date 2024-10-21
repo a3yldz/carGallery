@@ -50,9 +50,26 @@ public class Menu {
                     System.out.println("Rent a Car...");
                     star();
                     display.displayAvailableCars();
-                    rent1.rent();
+                    System.out.println("Choose rental type (1: Daily, 2: Monthly, 3: Annual): ");
+                    int rentalType = scanner.nextInt();
 
+                    switch (rentalType) {
+                        case 1:
+                            rent1.setRentStrategy(new RentDaily());
+                            break;
+                        case 2:
+                            rent1.setRentStrategy(new RentMonthly());
+                            break;
+                        case 3:
+                            rent1.setRentStrategy(new RentAnnual());
+                            break;
+                        default:
+                            System.out.println("Invalid choice. Defaulting to daily rent.");
+                            rent1.setRentStrategy(new RentDaily());
+                    }
+                    rent1.rent();
                     break;
+
                 case 5:
                     System.out.println("Buy a Car...");
                     buy1.buy();
